@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>WorldHeaderView.qml</file>
+        <file>WorldBodyView.qml</file>
+        <file>common/WorldToolButton.qml</file>
+    </qresource>
+</RCC>
