@@ -148,7 +148,7 @@ RowLayout {
                             listview1.highlightColor = "#50ff0000"
                             //显示自己字体颜色
                             listview1.itemAtIndex(listview1.currentIndex).textColor = "#ffffff"
-                            parent.textColor = "#00ff00"
+                            parent.textColor = "#eeee55"
                             listview1.currentIndex = index
                         }
                     }
@@ -264,7 +264,7 @@ RowLayout {
                             listview3.highlightColor = "#00000000"
                             listview2.highlightColor = "#50ff0000"
                             listview2.itemAtIndex(listview2.currentIndex).textColor = "#ffffff"
-                            parent.textColor = "#00ff00"
+                            parent.textColor = "#eeee55"
                             listview2.currentIndex = index
                         }
                     }
@@ -375,7 +375,7 @@ RowLayout {
 
 
                             listview3.itemAtIndex(listview3.currentIndex).textColor = "#ffffff"
-                            parent.textColor = "#00ff00"
+                            parent.textColor = "#eeee55"
                             listview3.currentIndex = index
                         }
                     }
