@@ -4,6 +4,10 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts
 
 ApplicationWindow {
+    id: window
+
+    property string mFONT_FAMILY: "微软雅黑"
+
     width: 1000
     height: 640
     visible: true
@@ -14,7 +18,7 @@ ApplicationWindow {
 
     background: Rectangle{
         anchors.fill: parent
-        color: "#000000"
+        color: "#222222"
     }
 
     ColumnLayout{

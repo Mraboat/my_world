@@ -4,5 +4,9 @@
         <file>WorldHeaderView.qml</file>
         <file>WorldBodyView.qml</file>
         <file>common/WorldToolButton.qml</file>
+        <file>WorldButtonsView.qml</file>
+        <file>WorldDialogBoxesView.qml</file>
+        <file>WorldBasicOtherView.qml</file>
+        <file>WorldPieChartView.qml</file>
     </qresource>
 </RCC>

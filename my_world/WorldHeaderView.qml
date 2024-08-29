@@ -37,14 +37,17 @@ ToolBar {
         WorldToolButton{
             iconSource: "qrc:/images/minimize-screen"
             toolTip: "最小化"
+            onClicked: window.hide()
         }
         WorldToolButton{
             iconSource: "qrc:/images/full-screen"
             toolTip: "全屏"
+            onClicked: window.visibility = Window.Maximized
         }
         WorldToolButton{
             iconSource: "qrc:/images/clear"
             toolTip: "关闭"
+            onClicked: Qt.quit()
         }
 
     }
