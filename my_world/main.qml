@@ -7,6 +7,7 @@ ApplicationWindow {
     id: window
 
     property string mFONT_FAMILY: "微软雅黑"
+    property string mBACK_COLOR: "#222222"
 
     width: 1000
     height: 640
@@ -18,7 +19,7 @@ ApplicationWindow {
 
     background: Rectangle{
         anchors.fill: parent
-        color: "#222222"
+        color: mBACK_COLOR
     }
 
     ColumnLayout{
