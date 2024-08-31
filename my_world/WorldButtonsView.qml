@@ -321,32 +321,27 @@ ColumnLayout{
             width: 480
             color: "#00000000"
 
-            // Me.ButtonGroup {
-            //     id: childGroup
-            //     exclusive: false; checkState: parentBox.checkState
-            //     spa
-            // }
-
-            // Me.CheckBox {
-            //     id: parentBox;
-            //     height: 50
-            //     text: qsTr("Parent"); checkState: childGroup.checkState
-            // }
             CheckBox {
                 id:option1
                 hoverEnabled: false
-                checked: true; text: qsTr("Child 1")
-                height: 20
+                text: qsTr("Option 1")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: parent.top
+                anchors.topMargin: 3
                 indicator: Rectangle{
-                    width: 20
-                    height: 20
+
+                    width: 22
+                    height: 22
                     color: "#00000000"
                     border.color: "white"
                     border.width: 2
-                    MouseArea{
+                    Image{
                         anchors.fill: parent
-                        hoverEnabled: true
-                        onEntered: parent.color = "#ff0000"
+                        source: option1.checkState===Qt.Checked?"qrc:/images/redduigou":""
+                        // color:""
+
                     }
                 }
 
@@ -355,23 +350,89 @@ ColumnLayout{
                         color: "white"
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        leftPadding: 100
-                        font.pointSize: 12
+                        leftPadding: parent.indicator.width + 20
+                        font{
+                            pointSize: 13
+                            bold: true
+                        }
+
 
                     }
-
-
-                // leftPadding: indicator.width
             }
 
-            // Me.CheckBox {
-            //     id:option2
-            //     height: 50
-            //     anchors.top: option1.bottom
-            //     text: qsTr("Child 2"); leftPadding: indicator.width
-            //     ButtonGroup.group: childGroup
-            // }
+            CheckBox {
+                id:option2
+                hoverEnabled: false
+                text: qsTr("Option 2")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: option1.bottom
+                anchors.topMargin: 15
+                indicator: Rectangle{
 
+                    width: 22
+                    height: 22
+                    color: "#00000000"
+                    border.color: "white"
+                    border.width: 2
+                    Image{
+                        anchors.fill: parent
+                        source: option2.checkState===Qt.Checked?"qrc:/images/greenduigou":""
+                    }
+                }
+
+                contentItem: Text {
+                        text: option2.text
+                        color: "white"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        leftPadding: parent.indicator.width + 20
+                        font{
+                            pointSize: 13
+                            bold: true
+                        }
+
+
+                    }
+            }
+
+            CheckBox {
+                id:option3
+                hoverEnabled: false
+                text: qsTr("Option 3")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: option2.bottom
+                anchors.topMargin: 15
+                indicator: Rectangle{
+
+                    width: 22
+                    height: 22
+                    color: "#00000000"
+                    border.color: "white"
+                    border.width: 2
+                    Image{
+                        anchors.fill: parent
+                        source: option3.checkState===Qt.Checked?"qrc:/images/blueduigou":""
+                    }
+                }
+
+                contentItem: Text {
+                        text: option3.text
+                        color: "white"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        leftPadding: parent.indicator.width + 20
+                        font{
+                            pointSize: 13
+                            bold: true
+                        }
+
+
+                    }
+            }
 
         }
 
@@ -423,6 +484,141 @@ ColumnLayout{
                 verticalAlignment: Text.AlignVCenter
             }
         }
+        Rectangle{
+            height: parent.height
+            width: 480
+            color: "#00000000"
+
+            RadioButton {
+                id:ra_option1
+                text: qsTr("Option 1")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: parent.top
+                anchors.topMargin: 3
+                indicator: Rectangle{
+
+                    width: 22
+                    height: 22
+                    radius: 22
+                    color: "#00000000"
+                    border.color: "white"
+                    border.width: 2
+                    // Image{
+                    //     anchors.fill: parent
+                    //     source: ra_option1.checked?"qrc:/images/redduigou":""
+                    // }
+                    Rectangle{
+                        anchors.centerIn: parent
+                        width: 12
+                        height: 12
+                        radius: 12
+                        color: "white"
+                        visible: ra_option1.checked
+                    }
+                }
+
+                contentItem: Text {
+                    text: ra_option1.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    leftPadding: parent.indicator.width + 20
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+                }
+            }
+            RadioButton {
+                id:ra_option2
+                //hoverEnabled: false
+                text: qsTr("Option 2")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: ra_option1.bottom
+                anchors.topMargin: 15
+                indicator: Rectangle{
+
+                    width: 22
+                    height: 22
+                    radius: 22
+                    color: "#00000000"
+                    border.color: "white"
+                    border.width: 2
+                    Rectangle{
+                        anchors.centerIn: parent
+                        width: 12
+                        height: 12
+                        radius: 12
+                        color: "white"
+                        visible: ra_option2.checked
+                    }
+                }
+
+                contentItem: Text {
+                    text: ra_option2.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    leftPadding: parent.indicator.width + 20
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+
+
+                }
+
+            }
+            RadioButton {
+                id:ra_option3
+                //hoverEnabled: false
+                text: qsTr("Option 3")
+                height: 22
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.top: ra_option2.bottom
+                anchors.topMargin: 15
+                indicator: Rectangle{
+
+                    width: 22
+                    height: 22
+                    radius: 22
+                    color: "#00000000"
+                    border.color: "white"
+                    border.width: 2
+                    Rectangle{
+                        anchors.centerIn: parent
+                        width: 12
+                        height: 12
+                        radius: 12
+                        color: "white"
+                        visible: ra_option3.checked
+                    }
+                }
+
+                contentItem: Text {
+                    text: ra_option3.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    leftPadding: parent.indicator.width + 20
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+
+
+                }
+
+            }
+
+        }
+
+
         Item{
             Layout.fillWidth: true
         }

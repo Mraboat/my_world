@@ -6,5 +6,8 @@
         <file>images/full-screen.png</file>
         <file>images/master.png</file>
         <file>images/zhediejiantou.png</file>
+        <file>images/blueduigou.png</file>
+        <file>images/greenduigou.png</file>
+        <file>images/redduigou.png</file>
     </qresource>
 </RCC>
