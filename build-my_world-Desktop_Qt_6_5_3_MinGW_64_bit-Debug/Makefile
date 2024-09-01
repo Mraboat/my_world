@@ -330,6 +330,7 @@ Makefile: ../my_world/my_world.pro D:/develop/Qt/6.5.3/mingw_64/mkspecs/win32-g+
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf \
@@ -362,7 +363,6 @@ Makefile: ../my_world/my_world.pro D:/develop/Qt/6.5.3/mingw_64/mkspecs/win32-g+
 		D:/develop/Qt/6.5.3/mingw_64/lib/Qt6Network.prl \
 		D:/develop/Qt/6.5.3/mingw_64/lib/Qt6Core.prl \
 		D:/develop/Qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf \
 		../my_world/qml.qrc \
 		../my_world/images.qrc
@@ -627,6 +627,7 @@ D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/qt_functions.prf:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf:
@@ -659,7 +660,6 @@ D:/develop/Qt/6.5.3/mingw_64/lib/Qt6Qml.prl:
 D:/develop/Qt/6.5.3/mingw_64/lib/Qt6Network.prl:
 D:/develop/Qt/6.5.3/mingw_64/lib/Qt6Core.prl:
 D:/develop/Qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 D:/develop/Qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf:
 ../my_world/qml.qrc:
 ../my_world/images.qrc:

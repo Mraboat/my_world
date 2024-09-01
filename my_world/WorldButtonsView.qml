@@ -295,7 +295,7 @@ ColumnLayout{
     }
 
     RowLayout{
-        id: groupBoxLay
+        id: checkBoxLay
         height: 100
         Item{
             width: 40
@@ -340,8 +340,6 @@ ColumnLayout{
                     Image{
                         anchors.fill: parent
                         source: option1.checkState===Qt.Checked?"qrc:/images/redduigou":""
-                        // color:""
-
                     }
                 }
 
@@ -447,14 +445,14 @@ ColumnLayout{
             strokeColor: "#888888"
             strokeStyle: ShapePath.SolidLine
             startX: 40
-            startY: groupBoxLay.y +groupBoxLay.height+20
+            startY: checkBoxLay.y +checkBoxLay.height+20
             PathLine{
                 x:40
-                y:groupBoxLay.y +groupBoxLay.height+20
+                y:checkBoxLay.y +checkBoxLay.height+20
             }
             PathLine{
                 x:parent.width-40
-                y:groupBoxLay.y +groupBoxLay.height+20
+                y:checkBoxLay.y +checkBoxLay.height+20
             }
         }
     }
@@ -638,6 +636,137 @@ ColumnLayout{
             PathLine{
                 x:parent.width-40
                 y:radioButtonLay.y +radioButtonLay.height+20
+            }
+        }
+    }
+    Item{
+        height: 20
+    }
+
+    RowLayout{
+        id:switchLay
+        height: 100
+        Item{
+            width: 40
+        }
+
+        Rectangle {
+            height: parent.height
+            width: 150
+            color: "#00000000"
+            Text{
+                anchors.centerIn: parent
+                text: "Switch"
+                font{
+                    family: window.mFONT_FAMILY
+                    pointSize: 18
+                }
+                color: "white"
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
+        Rectangle{
+            height: parent.height
+            width: 480
+            color: "#00000000"
+
+            Switch{
+                id:switch1
+                text: "Switch"
+                anchors.left: parent.left
+                anchors.leftMargin: 50
+                anchors.verticalCenter: parent.verticalCenter
+
+                contentItem: Text{
+                    text: parent.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.left: parent.indicator.right
+                    anchors.leftMargin: 10
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: switch1.checked = !switch1.checked
+                    }
+                }
+            }
+
+            Switch{
+                id:switch2
+                text: "Switch"
+                anchors.left: switch1.right
+                anchors.leftMargin: 120
+                anchors.verticalCenter: parent.verticalCenter
+                indicator: Rectangle{
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: 44
+                    height: 15
+                    radius: 15
+                    color: "#555555"
+                    //border.color: "white"
+                    //border.width: 2
+                    Rectangle{
+                        width: switch2yuan.x + switch2yuan.width
+                        height: 15
+                        radius: 15
+                        color: "pink"
+                    }
+
+                    Rectangle{
+                        // anchors.centerIn: parent
+                        y:(parent.height - height)/2
+                        id:switch2yuan
+                        x: switch2.checked?parent.width - width:0
+                        width: 20
+                        height: 20
+                        radius: 20
+                        color: "#8888ff"
+                        Behavior on x{
+                            NumberAnimation{
+                                duration: 300
+                            }
+                        }
+
+                    }
+                }
+                contentItem: Text{
+                    text: parent.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.left: parent.indicator.right
+                    anchors.leftMargin: 10
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: switch2.checked = !switch2.checked
+                    }
+                }
+            }
+        }
+    }
+    Shape{
+        anchors.fill: parent
+        ShapePath{
+            strokeWidth: 0
+            strokeColor: "#888888"
+            strokeStyle: ShapePath.SolidLine
+            startX: 40
+            startY: switchLay.y +switchLay.height+20
+            PathLine{
+                x:40
+                y:switchLay.y +switchLay.height+20
+            }
+            PathLine{
+                x:parent.width-40
+                y:switchLay.y +switchLay.height+20
             }
         }
     }

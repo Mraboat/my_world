@@ -114,10 +114,13 @@ debug/qrc_qml.cpp: ../my_world/qml.qrc \
 debug/qrc_images.cpp: ../my_world/images.qrc \
 		D:/develop/Qt/6.5.3/mingw_64/bin/rcc.exe \
 		../my_world/images/minimize-screen.png \
+		../my_world/images/greenduigou.png \
 		../my_world/images/zhediejiantou.png \
+		../my_world/images/redduigou.png \
 		../my_world/images/clear.png \
 		../my_world/images/full-screen.png \
 		../my_world/images/exit-fullscreen.png \
+		../my_world/images/blueduigou.png \
 		../my_world/images/master.png
 	D:\develop\Qt\6.5.3\mingw_64\bin\rcc.exe -name images --no-zstd ..\my_world\images.qrc -o debug\qrc_images.cpp
 
