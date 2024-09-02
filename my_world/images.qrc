@@ -9,5 +9,7 @@
         <file>images/blueduigou.png</file>
         <file>images/greenduigou.png</file>
         <file>images/redduigou.png</file>
+        <file>images/moon.png</file>
+        <file>images/sun.png</file>
     </qresource>
 </RCC>

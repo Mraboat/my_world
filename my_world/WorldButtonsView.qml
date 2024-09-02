@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.5
-import QtQuick.Controls.Material as Me
 import QtQuick.Layouts
 import QtQuick.Shapes
 import Qt5Compat.GraphicalEffects
@@ -699,7 +698,7 @@ ColumnLayout{
                 id:switch2
                 text: "Switch"
                 anchors.left: switch1.right
-                anchors.leftMargin: 120
+                anchors.leftMargin: 100
                 anchors.verticalCenter: parent.verticalCenter
                 indicator: Rectangle{
                     anchors.verticalCenter: parent.verticalCenter
@@ -730,7 +729,14 @@ ColumnLayout{
                                 duration: 300
                             }
                         }
-
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked: switch2.checked = !switch2.checked
+                            drag.target: switch2yuan
+                            drag.axis: Drag.XAxis
+                            drag.minimumX: 0
+                            drag.maximumX: 24
+                        }
                     }
                 }
                 contentItem: Text{
@@ -750,6 +756,102 @@ ColumnLayout{
                     }
                 }
             }
+
+            Switch{
+                id:switch3
+                text: "Switch"
+                anchors.left: switch2.right
+                anchors.leftMargin: 100
+                anchors.verticalCenter: parent.verticalCenter
+                RectangularGlow{
+                    property bool hover: false
+                    anchors.fill: switch3.indicator
+                    z:-1
+                    color: "white"
+                    spread: 0.4
+                    glowRadius: switch3.checked?5:0
+                    cornerRadius: switch3.indicator.radius + glowRadius
+                    Behavior on glowRadius{
+                        NumberAnimation{
+                            duration: 200
+                        }
+                    }
+                    // MouseArea{
+                    //     anchors.fill: parent
+                    //     hoverEnabled: true
+                    //     onEntered: parent.hover = true
+                    //     onExited: parent.hover = false
+                    //     onPressed: buttontype4.scale = 0.95
+                    //     onReleased: buttontype4.scale = 1.0
+                    // }
+                }
+                indicator: Rectangle{
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: 50
+                    height: 20
+                    radius: 20
+                    color: "#555555"
+
+                    Rectangle{
+                        width: switch3yuan.x + switch3yuan.width
+                        height: 20
+                        radius: 20
+                        color: "#50ffd0d0"
+                    }
+                    Image{
+                        x:3
+                        width: 20
+                        height: 20
+                        source: "qrc:/images/sun"
+                    }
+                    Image{
+                        x: parent.width - 25
+                        y:(parent.height - height)/2
+                        width: 24
+                        height: 24
+                        source: "qrc:/images/moon"
+                    }
+
+                    Rectangle{
+                        // anchors.centerIn: parent
+                        y:(parent.height - height)/2
+                        id:switch3yuan
+                        x: switch3.checked?parent.width - width:0
+                        width: 25
+                        height: 25
+                        radius: 25
+                        color: switch3.checked?"#ff8800":"#8888ff"
+                        Behavior on x{
+                            NumberAnimation{
+                                duration: 300
+                            }
+                        }
+                        Behavior on color{
+                            ColorAnimation{
+                                duration: 300
+                            }
+                        }
+
+                    }
+                }
+                contentItem: Text{
+                    text: parent.text
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.left: parent.indicator.right
+                    anchors.leftMargin: 10
+                    font{
+                        pointSize: 13
+                        bold: true
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: switch3.checked = !switch3.checked
+                    }
+                }
+            }
+
         }
     }
     Shape{

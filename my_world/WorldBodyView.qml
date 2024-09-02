@@ -392,10 +392,10 @@ RowLayout {
             listview2Model.append(chartList)
 
             //当前测试
-            var loader = repeater.itemAt(0)
+            var loader = repeater.itemAt(2)
             loader.visible = true
-            loader.source = basicList[0].qml+".qml"
-            loaderIndex = 0
+            loader.source = basicList[2].qml+".qml"
+            loaderIndex = 2
         }
     }
 
